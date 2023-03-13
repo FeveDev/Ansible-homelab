@@ -1,0 +1,11 @@
+
+- name: Upgrade packages
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Tear down existing services
+      community.docker.docker_compose:
+        project_src: /root/compose
+        pull: true
+        state: present
+
