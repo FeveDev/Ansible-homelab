@@ -5,6 +5,6 @@
   tasks:
      - name: do it
        community.general.apk:
-       update_cache: true
-       upgrade: true
+        update_cache: true
+        upgrade: true
   
