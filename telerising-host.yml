@@ -1,7 +1,9 @@
+
 - name: Update repositories and upgrade all packages
   hosts: localhost
   become: true
-  community.general.apk:
-    update_cache: true
-    upgrade: true
+  tasks:
+     - community.general.apk:
+       update_cache: true
+       upgrade: true
   
