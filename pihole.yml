@@ -9,8 +9,8 @@
         project_src: /root/compose
         pull: true
         state: present
-    - name: upgrade packages:
-       community.general.apk:
+    - name: upgrade packages
+      community.general.apk:
         update_cache: true
         upgrade: true
 
