@@ -1,11 +1,16 @@
 
 - name: Upgrade packages
   hosts: localhost
-  gather_facts: true
+  gather_facts: false
+  become: true
   tasks:
-    - name: Tear down existing services
+    - name: upgrade docker containers
       community.docker.docker_compose:
         project_src: /root/compose
         pull: true
         state: present
+    - name: upgrade packages
+       community.general.apk:
+        update_cache: true
+        upgrade: true
 
